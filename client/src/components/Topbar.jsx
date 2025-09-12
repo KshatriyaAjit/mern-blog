@@ -85,14 +85,18 @@ const Topbar = () => {
             >
               <Menu size={22} />
             </button>
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2 group">
               <img
                 src={Light}
                 alt="Logo"
-                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="hidden sm:inline font-bold text-lg text-gray-800 dark:text-gray-200">
-                MyBlog
+              <span className="hidden sm:inline font-extrabold text-xl sm:text-2xl 
+               bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 
+               bg-clip-text text-transparent 
+               dark:from-indigo-400 dark:via-purple-300 dark:to-pink-400
+               tracking-wide transition-colors duration-300">
+                ByteBlog
               </span>
             </Link>
           </div>
