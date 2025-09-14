@@ -37,7 +37,7 @@ const AddCategory = () => {
 
     async function onSubmit(values) {
         try {
-            const response = await api.post('/category', values)
+            const response = await api.post('/api/category', values)
             showToast('success', response.data.message)
             form.reset()
         } catch (error) {

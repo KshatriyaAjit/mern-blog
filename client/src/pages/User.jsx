@@ -23,7 +23,7 @@ import React, { useState } from "react";
 const User = () => {
   const [refreshData, setRefreshData] = useState(false);
   const { data, loading } = useFetch(
-    `${getEvn("VITE_API_URL")}/user`,
+    `${getEvn("VITE_API_URL")}/api/user`,
     {
       method: "get",
       credentials: "include",
@@ -32,7 +32,7 @@ const User = () => {
   );
 
   const handleDelete = async (id) => {
-    const response = await deleteData(`${getEvn("VITE_API_URL")}/user/${id}`);
+    const response = await deleteData(`${getEvn("VITE_API_URL")}/api/user/${id}`);
     if (response) {
       setRefreshData(!refreshData);
       showToast("success", "Data deleted.");
@@ -45,7 +45,7 @@ const User = () => {
     const nextRole = currentRole === "admin" ? "user" : "admin";
 
     const res = await patchData(
-      `${getEvn("VITE_API_URL")}/user/role/${id}`,
+      `${getEvn("VITE_API_URL")}/api/user/role/${id}`,
       null,
       `Do you want to change role for ${name}? (${currentRole} → ${nextRole})`
     );

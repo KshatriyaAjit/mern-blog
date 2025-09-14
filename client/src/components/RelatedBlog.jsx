@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const RelatedBlog = ({ props }) => {
   const { data, loading, error } = useFetch(
-    `${getEvn('VITE_API_URL')}/blog/get-related-blog/${props.category}/${props.currentBlog}`,
+    `${getEvn('VITE_API_URL')}/api/blog/get-related-blog/${props.category}/${props.currentBlog}`,
     {
       method: 'get',
       credentials: 'include',

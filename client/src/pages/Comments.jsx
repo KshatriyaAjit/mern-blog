@@ -10,13 +10,13 @@ import { showToast } from '@/helpers/showToast'
 
 const Comments = () => {
     const [refreshData, setRefreshData] = useState(false)
-    const { data, loading, error } = useFetch(`${getEvn('VITE_API_URL')}/comment`, {
+    const { data, loading, error } = useFetch(`${getEvn('VITE_API_URL')}/api/comment`, {
         method: 'get',
         credentials: 'include'
     }, [refreshData])
 
     const handleDelete = async (id) => {
-        const response = await deleteData(`${getEvn('VITE_API_URL')}/comment/${id}`)
+        const response = await deleteData(`${getEvn('VITE_API_URL')}/api/comment/${id}`)
         if (response) {
             setRefreshData(!refreshData)
             showToast('success', 'Comment deleted successfully.')

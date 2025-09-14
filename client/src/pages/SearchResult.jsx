@@ -8,7 +8,7 @@ import Loading from '@/components/Loading'
 const SearchResult = () => {
   const [searchParams] = useSearchParams()
   const q = searchParams.get('q')
-  const { data: blogData, loading, error } = useFetch(`${getEvn('VITE_API_URL')}/blog/search?q=${q}`, {
+  const { data: blogData, loading, error } = useFetch(`${getEvn('VITE_API_URL')}/api/blog/search?q=${q}`, {
     method: 'get',
     credentials: 'include'
   })

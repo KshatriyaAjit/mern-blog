@@ -25,7 +25,7 @@ import moment from "moment";
 const BlogDetails = () => {
   const [refreshData, setRefreshData] = useState(false);
   const { data: blogData, loading } = useFetch(
-    `${getEvn("VITE_API_URL")}/blog/get-all`,
+    `${getEvn("VITE_API_URL")}/api/blog/get-all`,
     {
       method: "get",
       credentials: "include",
@@ -34,7 +34,7 @@ const BlogDetails = () => {
   );
 
   const handleDelete = async (id) => {
-    const response = await deleteData(`${getEvn("VITE_API_URL")}/blog/delete/${id}`);
+    const response = await deleteData(`${getEvn("VITE_API_URL")}/api/blog/delete/${id}`);
     if (response) {
       setRefreshData(!refreshData);
       showToast("success", "Blog deleted successfully.");

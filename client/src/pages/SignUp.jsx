@@ -51,7 +51,7 @@ const SignUp = () => {
   async function onSubmit(values) {
     try {
       setLoading(true);
-      const res = await api.post("/auth/register", {
+      const res = await api.post("/api/auth/register", {
         name: values.name,
         email: values.email,
         password: values.password,

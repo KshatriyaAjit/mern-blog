@@ -9,7 +9,7 @@ import { BiCategory } from "react-icons/bi"
 const BlogByCategory = () => {
   const { category } = useParams()
   const { data: blogData, loading, error } = useFetch(
-    `${getEvn('VITE_API_URL')}/blog/get-blog-by-category/${category}`,
+    `${getEvn('VITE_API_URL')}/api/blog/get-blog-by-category/${category}`,
     {
       method: 'get',
       credentials: 'include'

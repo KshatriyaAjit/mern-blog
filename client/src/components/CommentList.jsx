@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 const CommentList = ({ props }) => {
   const { user } = useSelector((state) => state.auth);
   const { data, loading, error } = useFetch(
-    `${getEvn("VITE_API_URL")}/comment/blog/${props.blogid}`,
+    `${getEvn("VITE_API_URL")}/api/comment/blog/${props.blogid}`,
     {
       method: "get",
       credentials: "include",

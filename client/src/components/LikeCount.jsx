@@ -12,7 +12,7 @@ const LikeCount = ({ props }) => {
   const { user, token, isLoggedIn } = useSelector((state) => state.auth);
 
   const { data: blogLikeCount } = useFetch(
-    `/blog-like/likes/${props.blogid}/${isLoggedIn ? user._id : ''}`,
+    `/api/blog-like/likes/${props.blogid}/${isLoggedIn ? user._id : ''}`,
     { method: 'get' },
     [props.blogid, isLoggedIn, user?._id]
   );

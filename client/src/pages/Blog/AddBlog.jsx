@@ -37,7 +37,7 @@ const AddBlog = () => {
 
   const {
     data: categoryData = { categories: [] },
-  } = useFetch(`${getEvn("VITE_API_URL")}/category/all-category`, {
+  } = useFetch(`${getEvn("VITE_API_URL")}/api/category/all-category`, {
     method: "get",
     credentials: "include",
   });
@@ -92,7 +92,7 @@ const AddBlog = () => {
       formData.append("file", file);
       formData.append("data", JSON.stringify(newValues));
 
-      const { data } = await api.post(`/blog/add`, formData, {
+      const { data } = await api.post(`/api/blog/add`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

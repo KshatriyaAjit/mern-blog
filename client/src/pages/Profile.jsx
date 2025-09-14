@@ -27,7 +27,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const { data } = await api.get("/auth/me");
+        const { data } = await api.get("/api/auth/me");
         dispatch(setUser(data.user));
         setName(data.user.name);
         setEmail(data.user.email);
@@ -42,7 +42,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     try {
-      await api.post("/auth/logout");
+      await api.post("/api/auth/logout");
       dispatch(logout());
       toast.info("Logged out successfully");
       navigate("/");
@@ -60,7 +60,7 @@ const Profile = () => {
         formData.append("avatar", file);
       }
 
-      const { data } = await api.put("/auth/update-profile", formData, {
+      const { data } = await api.put("/api/auth/update-profile", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -78,7 +78,7 @@ const Profile = () => {
       const currentPassword = document.getElementById("currentPass").value;
       const newPassword = document.getElementById("newPass").value;
 
-      await api.put("/auth/update-password", { currentPassword, newPassword });
+      await api.put("/api/auth/update-password", { currentPassword, newPassword });
 
       toast.success("Password changed successfully!");
       setPasswordMode(false);

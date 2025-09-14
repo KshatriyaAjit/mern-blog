@@ -24,13 +24,13 @@ const CategoryDetails = () => {
   const [refreshData, setRefreshData] = useState(false)
 
   const { data: categoryData = { categories: [] }, loading, error } = useFetch(
-    `${getEvn('VITE_API_URL')}/category/all-category`,
+    `${getEvn('VITE_API_URL')}/api/category/all-category`,
     { method: 'get', credentials: 'include' },
     [refreshData]
   )
 
   const handleDelete = async (id) => {
-    const response = await deleteData(`${getEvn('VITE_API_URL')}/category/${id}`)
+    const response = await deleteData(`${getEvn('VITE_API_URL')}/api/category/${id}`)
     if (response) {
       setRefreshData(!refreshData)
       showToast('success', 'Category deleted successfully.')

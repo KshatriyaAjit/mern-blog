@@ -17,7 +17,7 @@ const SingleBlogDetails = () => {
   const { blog, category } = useParams()
 
   const { data, loading, error } = useFetch(
-    `${getEvn('VITE_API_URL')}/blog/get-blog/${blog}`,
+    `${getEvn('VITE_API_URL')}/api/blog/get-blog/${blog}`,
     {
       method: 'get',
       credentials: 'include',

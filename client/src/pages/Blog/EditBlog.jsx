@@ -30,12 +30,12 @@ const EditBlog = () => {
     const navigate = useNavigate()
     const { user } = useSelector((state) => state.auth);
 
-    const { data: categoryData } = useFetch(`${getEvn('VITE_API_URL')}/category/all-category`, {
+    const { data: categoryData } = useFetch(`${getEvn('VITE_API_URL')}/api/category/all-category`, {
         method: 'get',
         credentials: 'include'
     })
 
-    const { data: blogData, loading: blogLoading } = useFetch(`${getEvn('VITE_API_URL')}/blog/edit/${blogid}`, {
+    const { data: blogData, loading: blogLoading } = useFetch(`${getEvn('VITE_API_URL')}/api/blog/edit/${blogid}`, {
         method: 'get',
         credentials: 'include'
     }, [blogid])

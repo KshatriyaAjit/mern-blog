@@ -16,7 +16,7 @@ const EditCategory = () => {
     const { categoryid } = useParams();
 
     // ✅ Fetch existing category data
-    const { data: categoryData, loading, error } = useFetch(`/category/single/${categoryid}`, {
+    const { data: categoryData, loading, error } = useFetch(`/api/category/single/${categoryid}`, {
         method: 'get',
     }, [categoryid]);
 

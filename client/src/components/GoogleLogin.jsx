@@ -19,7 +19,7 @@ const GoogleLogin = () => {
       const user = result.user;
       const token = await user.getIdToken();
 
-      const res = await api.post("/auth/google-login", { idToken: token });
+      const res = await api.post("/api/auth/google-login", { idToken: token });
 
       toast.success(res.data.message || "Google login successful 🎉");
 
