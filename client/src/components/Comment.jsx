@@ -37,7 +37,7 @@ const Comment = ({ props }) => {
 
   async function onSubmit(values) {
     try {
-      const response = await fetch(`${getEvn("VITE_API_URL")}/comment`, {
+      const response = await fetch(`${getEvn("VITE_API_URL")}/api/comment`, {
         method: "post",
         headers: {
           "Content-type": "application/json",

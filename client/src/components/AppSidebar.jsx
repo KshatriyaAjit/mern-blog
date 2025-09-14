@@ -30,7 +30,7 @@ const AppSidebar = ({ onClose }) => {
   const isLoggedIn = !!token;
 
   const { data: categoryData } = useFetch(
-    `${getEvn("VITE_API_URL")}/category/all-category`,
+    `${getEvn("VITE_API_URL")}/api/category/all-category`,
     {
       method: "get",
       credentials: "include",

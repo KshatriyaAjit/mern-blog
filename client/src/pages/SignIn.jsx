@@ -44,7 +44,7 @@ const SignIn = () => {
   async function onSubmit(values) {
     setLoading(true);
     try {
-      const res = await api.post("/auth/login", values);
+      const res = await api.post("/api/auth/login", values);
 
       if (res.status === 200) {
         toast.success(res.data.message || "Login successful 🎉");
