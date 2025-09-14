@@ -61,7 +61,7 @@ const AddCategory = () => {
                     </h1>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                            {/* Name Field */}
+                          
                             <FormField
                                 control={form.control}
                                 name="name"
@@ -84,7 +84,7 @@ const AddCategory = () => {
                                 )}
                             />
 
-                            {/* Slug Field */}
+                         
                             <FormField
                                 control={form.control}
                                 name="slug"
@@ -107,13 +107,13 @@ const AddCategory = () => {
                                 )}
                             />
 
-                            {/* Submit Button */}
+                          
                             <Button
                                 type="submit"
                                 className="w-full mt-4 py-2 rounded-lg text-white font-medium 
                                            bg-indigo-600 hover:bg-indigo-700 
                                            dark:bg-indigo-500 dark:hover:bg-indigo-600 
-                                           transition duration-200 shadow-md"
+                                           transition duration-200 shadow-md cursor-pointer"
                             >
                                 Submit
                             </Button>

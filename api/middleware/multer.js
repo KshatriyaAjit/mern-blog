@@ -1,6 +1,6 @@
 import multer from "multer";
 
-// Store file in memory, not disk
+
 const storage = multer.memoryStorage();
 
 function fileFilter(req, file, cb) {
@@ -15,7 +15,7 @@ function fileFilter(req, file, cb) {
 const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 10 * 1024 * 1024 }, // 5 MB
+  limits: { fileSize: 15 * 1024 * 1024 }, 
 });
 
 export default upload;

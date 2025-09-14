@@ -45,7 +45,7 @@ const AddBlog = () => {
   const [filePreview, setPreview] = useState(null);
   const [file, setFile] = useState(null);
 
-  // Validation schema
+ 
   const formSchema = z.object({
     category: z.string().min(3, "Category must be at least 3 characters long."),
     title: z.string().min(3, "Title must be at least 3 characters long."),
@@ -65,13 +65,13 @@ const AddBlog = () => {
     },
   });
 
-  // CKEditor handler
+  
   const handleEditorData = (event, editor) => {
     const data = editor.getData();
     form.setValue("blogContent", data);
   };
 
-  // Auto slugify
+ 
   const blogTitle = form.watch("title");
   useEffect(() => {
     if (blogTitle) {
@@ -107,7 +107,7 @@ const AddBlog = () => {
     }
   }
 
-  // Handle file
+
   const handleFileSelection = (files) => {
     const selectedFile = files[0];
     const preview = URL.createObjectURL(selectedFile);
@@ -127,7 +127,7 @@ const AddBlog = () => {
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-6"
             >
-              {/* Category */}
+          
               <FormField
                 control={form.control}
                 name="category"
@@ -158,7 +158,7 @@ const AddBlog = () => {
                 )}
               />
 
-              {/* Title */}
+         
               <FormField
                 control={form.control}
                 name="title"
@@ -179,7 +179,7 @@ const AddBlog = () => {
                 )}
               />
 
-              {/* Slug */}
+         
               <FormField
                 control={form.control}
                 name="slug"
@@ -200,7 +200,7 @@ const AddBlog = () => {
                 )}
               />
 
-              {/* Featured Image */}
+      
               <div>
                 <FormLabel className="text-gray-700 dark:text-gray-300 mb-2 block">
                   Featured Image
@@ -228,7 +228,7 @@ const AddBlog = () => {
                 </Dropzone>
               </div>
 
-              {/* Blog Content */}
+            
               <FormField
                 control={form.control}
                 name="blogContent"
@@ -252,10 +252,9 @@ const AddBlog = () => {
                 )}
               />
 
-              {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium px-6 py-2 rounded-lg transition"
+                className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium px-6 py-2 rounded-lg transition cursor-pointer"
               >
                 Submit
               </Button>

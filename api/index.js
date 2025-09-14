@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://mybyteblog.netlify.app",
+    origin:"https://mybyteblog.netlify.app", 
     credentials: true,
   })
 );
@@ -35,8 +35,7 @@ app.use("/api/blog", BlogRoute);
 app.use("/api/comment", CommentRoute);
 app.use("/api/blog-like", BlogLikeRoute);
 
-// Global Error Handler
-// Global error handler
+
 app.use((err, req, res, next) => {
   console.error("Error handler:", err.message);
 
@@ -48,7 +47,6 @@ app.use((err, req, res, next) => {
 });
 
 
-// Database & Server Init
 mongoose
   .connect(process.env.MONGODB_URI, { dbName: "mernBlog" })
   .then(() => {
@@ -59,5 +57,5 @@ mongoose
   })
   .catch((err) => {
     console.error("❌ Database connection failed.", err);
-    process.exit(1); // stop app if db fails
+    process.exit(1);
   });

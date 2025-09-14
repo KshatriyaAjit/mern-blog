@@ -10,7 +10,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// ✅ only define once
+
 export const streamUpload = (fileBuffer, folder = "mern-blog") => {
   return new Promise((resolve, reject) => {
     const stream = cloudinary.uploader.upload_stream(
