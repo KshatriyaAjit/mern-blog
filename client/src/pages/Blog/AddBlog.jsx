@@ -255,7 +255,7 @@ const AddBlog = () => {
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium px-6 py-2 rounded-lg transition"
+                className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium px-6 py-2 rounded-lg transition cursor-pointer"
               >
                 Submit
               </Button>
