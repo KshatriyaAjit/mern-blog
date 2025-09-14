@@ -23,8 +23,8 @@ import {
 } from "./helpers/RouteName";
 
 import Index from "./pages/Index";
-import SignIn from "./pages/Signin";
-import SignUp from "./pages/Signup";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import AddBlog from "./pages/Blog/AddBlog";
 import AddCategory from "./pages/Category/AddCategory";
