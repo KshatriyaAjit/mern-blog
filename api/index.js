@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://mybyteblog.netlify.app/",
+    origin: "https://mybyteblog.netlify.app",
     credentials: true,
   })
 );
